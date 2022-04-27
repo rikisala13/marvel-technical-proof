@@ -22,7 +22,6 @@ function loadCharacters() {
       const { data } = await axios(
         `${baseUrl}${items.characters}?ts=1&${limit}&${offset}&apikey=${apikey}&hash=${hash}`
       );
-      console.log(data);
       dispatch(descargarOk(data.data.results));
     // descargar users de la DB
     } catch (error) {
