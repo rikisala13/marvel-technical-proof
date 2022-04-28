@@ -17,7 +17,7 @@ function Profile() {
   }
   return (
     isAuthenticated && (
-      <div className="d-flex flex-column align-items-center">
+      <div className="d-flex flex-column align-items-center pt-5 mt-5">
         <img src={picture} alt={name} />
         <h2>{name}</h2>
         <p>
