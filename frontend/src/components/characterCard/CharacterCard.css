@@ -1,22 +1,24 @@
 .character__item {
     margin: 0.8%;
-    width: 300px;
+    width: 250px;
     filter: contrast(0.8);
     display: flex;
     flex-direction: column;
     align-items: baseline;
-
+    filter: grayscale(60%);
+    border: 8px rgb(206, 21, 0) solid;
+border-radius: 6px;
 }
 
 .character__img {
 
-    width: 300px;
+    width: 234px;
     transition-duration: 0.5s;
-    filter: grayscale(100%);
+    
     transform: scale(1);
 }
 
-.character__img:hover {
+.character__item:hover {
     transform: scale(1.05);
     filter: none
 }
