@@ -9,11 +9,12 @@ import store from './redux/store/store';
 import Navbar from './components/navbar/Navbar';
 import SignIn from './components/signin/SignIn';
 import LogoutButton from './components/signin/Logout';
+import CharactersList from './pages/charactersList/CharactersList';
+import CharacterDetail from './pages/characterDetail/CharacterDetail';
 import Profile from './profile/Profile';
+import Footer from './components/footer/Footer';
 // styles
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Footer from './components/footer/Footer';
-import CharactersList from './pages/charactersList/CharactersList';
 
 function App() {
   const { isAuthenticated } = useAuth0();
@@ -28,16 +29,12 @@ function App() {
             <Routes>
               <Route path="/" exact element={<CharactersList />} />
               <Route path="/profile" exact element={<Profile />} />
+              <Route path="/character-details/:id" exact element={<CharacterDetail />} />
               <Route path="/login" element={<SignIn />} />
               <Route path="/logout" element={<LogoutButton />} />
             </Routes>
           )
-          : (
-
-            <SignIn />
-
-          )}
-
+          : (<SignIn />)}
         <Footer />
       </Provider>
     </BrowserRouter>
