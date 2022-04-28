@@ -1,0 +1,15 @@
+.paginacion {
+padding-top: 20px;
+padding-bottom: 15px;
+}
+.input-paginacion{
+    width: 2em;
+    text-align: center;
+}
+.p-paginacion{
+    margin-bottom: 0;
+}
+button:disabled{
+    background-color: dimgrey;
+    cursor:no-drop;
+}
