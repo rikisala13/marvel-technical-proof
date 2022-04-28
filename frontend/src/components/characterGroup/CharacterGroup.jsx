@@ -1,21 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import { useSelector } from 'react-redux';
 import CharacterCard from '../characterCard/CharacterCard';
+import './CharacterGroup.css';
+import AfterNextPageButton from '../buttons/AfterNextPageButton';
 
 export default function CharactersGroup() {
-  const characters = useSelector((store) => store.characters.characters);
+  // obtener los heroes del session storage
+  const characters = JSON.parse(sessionStorage.getItem('characters'));
+  const [page, setPage] = useState(1);
+  const [perPage] = useState(10);
+  const maximum = characters.length / perPage;
   // no mostrar los heroes que no tengan imagen
-  const cleanCharacter = characters.filter((character) => character.thumbnail.path !== 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available');
 
   return (
-    <div data-testid="characters-container" className="d-flex flex-column">
-
-      {
-            cleanCharacter.map((
-              character
-            ) => <CharacterCard character={character} key={character.id} />)
-            }
+    <div className="d-flex flex-column pt-5 mt-5">
+      <div className="d-flex justify-content-center ">
+        <AfterNextPageButton page={page} setPage={setPage} maximum={maximum} />
+      </div>
+      <div data-testid="characters-container" className="grid">
+        {
+        characters
+          .slice((page - 1) * perPage, (page - 1) * perPage + perPage)
+          .map((character) => <CharacterCard character={character} key={character.id} />)
+        }
+      </div>
     </div>
   );
 }
