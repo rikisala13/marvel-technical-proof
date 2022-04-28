@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
 import charactersReducer from './characters.reducer';
-import filterReducer from './filtered.reducer';
+import comicsReducer from './comics.reducer';
+import favoritesReducer from './favourites.reducer';
 
 export default combineReducers({
   characters: charactersReducer,
-  filter: filterReducer
+  comics: comicsReducer,
+  favourites: favoritesReducer
 });
