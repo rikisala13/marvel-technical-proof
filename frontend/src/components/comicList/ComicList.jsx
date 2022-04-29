@@ -10,7 +10,7 @@ export default function ComicList({ comics }) {
           {
             comics.map((comic) => (
               <div className="d-flex flex-column comic-item" key={comic.id}>
-                <img src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`} className="list-img" alt="portada" />
+                <img src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`} data-testid={`list-item-${comic.id}`} className="list-img" alt="portada" />
                 <div>
                   {comic.title}
                 </div>
