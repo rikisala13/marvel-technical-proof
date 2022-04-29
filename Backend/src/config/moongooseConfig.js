@@ -1,12 +1,12 @@
 const { connect } = require('mongoose');
-const debug = require('debug');
+// const debug = require('debug');
 
 connect(
-  process.env.DDBB_URL_MARVEL,
+  process.env.DDBB_URLL,
   {
     useUnifiedTopology: true,
     useNewUrlParser: true
   }
 )
-  .then(() => debug('Database connection stablished'))
-  .catch(({ message }) => debug(message));
+  .then(() => console.log('Database connection stablished'))
+  .catch(({ message }) => console.log(message));
