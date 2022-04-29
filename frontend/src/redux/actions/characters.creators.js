@@ -12,18 +12,18 @@ function loadCharacters() {
     series: 'series',
     stories: 'stories'
   };
-  const limit = 'limit=20';
+  const limit = 'limit=100';
   const offset = 'offset=0';
   const apikey = process.env.REACT_APP_MARVEL_APIKEY_PUBLIC;
   const hash = process.env.REACT_APP_MARVEL_HASH;
   return async (dispatch) => {
+    // descargar users de la DB
     dispatch(descargaCharacters());
     try {
       const { data } = await axios(
         `${baseUrl}${items.characters}?ts=1&${limit}&${offset}&apikey=${apikey}&hash=${hash}`
       );
       dispatch(descargarOk(data.data.results));
-    // descargar users de la DB
     } catch (error) {
       dispatch(descargarFail());
     }
@@ -60,7 +60,6 @@ function filterCharacters(inputValue, characters) {
   const filteredList = characters?.filter((character) => character?.title.toLowerCase().includes(
     inputValue.toLowerCase()
   ));
-  console.log(filteredList);
 
   return {
     type: actionTypes.FILTER_CHARACTERS,
