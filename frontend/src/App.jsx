@@ -11,7 +11,7 @@ import SignIn from './components/signin/SignIn';
 import LogoutButton from './components/signin/Logout';
 import CharactersList from './pages/charactersList/CharactersList';
 import CharacterDetail from './pages/characterDetail/CharacterDetail';
-import Profile from './profile/Profile';
+import Profile from './pages/profile/Profile';
 import Footer from './components/footer/Footer';
 // styles
 import 'bootstrap/dist/css/bootstrap.min.css';
