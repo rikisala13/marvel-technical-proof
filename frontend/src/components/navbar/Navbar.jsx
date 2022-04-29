@@ -1,8 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Navbar() {
+  const navigate = useNavigate();
+  function redirect() {
+    navigate('/profile');
+  }
+
   return (
-    <div className="main-container">
+    <div className="main-container fixed-top">
       <nav className="navbar navbar-expand navbar-dark bg-dark d-flex align-items-center">
         <div className="d-flex align-items-center">
           <img
@@ -14,6 +20,10 @@ function Navbar() {
           />
           <h2 className="navbar-brand">Marvel Heroes App</h2>
         </div>
+        <div>
+          <button type="button" className="btn btn-dark" onClick={redirect}>Perfil</button>
+        </div>
+
       </nav>
     </div>
   );
