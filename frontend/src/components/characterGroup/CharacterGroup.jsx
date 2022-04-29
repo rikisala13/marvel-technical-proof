@@ -9,7 +9,7 @@ export default function CharactersGroup() {
   const characters = JSON.parse(sessionStorage.getItem('characters'));
   const [page, setPage] = useState(1);
   const [perPage] = useState(10);
-  const maximum = characters.length / perPage;
+  const maximum = 100 / perPage;
   // no mostrar los heroes que no tengan imagen
 
   return (
