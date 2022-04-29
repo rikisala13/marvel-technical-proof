@@ -13,6 +13,7 @@
     "react-bootstrap": "^2.3.0",
     "react-dom": "^18.1.0",
     "react-redux": "^8.0.1",
+    "react-router": "^6.3.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "redux": "^4.2.0",
@@ -22,7 +23,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --watchAll --collect -coverage",
+    "test": "react-scripts test --watchAll --collect--coverage",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -51,5 +52,5 @@
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.5.0"
   },
-    "proxy": "http://localhost:5000"
+  "proxy": "http://localhost:5000"
 }
