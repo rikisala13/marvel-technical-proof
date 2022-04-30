@@ -10,15 +10,20 @@ import {
 } from '../../redux/actions/favourites.creators';
 
 function FavoritesButton() {
-  const favorites = useSelector((store) => store.favorites);
+  const favorites = useSelector((store) => store.favourites.favourites);
   const dispatch = useDispatch();
 
   const characters = JSON.parse(sessionStorage.getItem('characters'));
   const [character, setcharacter] = useState('');
   function isFavorite(characterId) {
-    const isAlreadyInFavorite = favorites.some((id) => id === characterId);
-    return isAlreadyInFavorite;
+    if (favorites.length) {
+      const isAlreadyInFavorite = favorites.some((id) => id === characterId);
+      return isAlreadyInFavorite;
+    }
+
+    return false;
   }
+
   const { id } = useParams();
   function changeFavourite(characterId) {
     if (isFavorite(id, favorites)) {
@@ -37,7 +42,6 @@ function FavoritesButton() {
       type="button"
       onClick={() => changeFavourite(character.id)}
     >
-      hello
       <figure>
         <img
           src={isFavorite(character.id, favorites) ? fullHeart : emptyHeart}
