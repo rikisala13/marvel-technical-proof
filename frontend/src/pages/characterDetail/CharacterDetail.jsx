@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-// import FavoritesButton from '../../components/buttons/FavourtiteButton';
+import FavoritesButton from '../../components/buttons/FavourtiteButton';
 import ComicList from '../../components/comicList/ComicList';
 import { loadComics } from '../../redux/actions/comics.creators';
 import './CharacterDetail.css';
@@ -24,9 +24,6 @@ export default function CharacterDetail() {
   }, []);
   return (
     <main className="character__details mt-5 pt-5 ">
-      <div>
-        {/* <FavoritesButton character={character} /> */}
-      </div>
       <h2 className="character__detail-title">
 
         {character.name}
@@ -34,6 +31,9 @@ export default function CharacterDetail() {
       </h2>
       <div className="character__detail-top">
         <img data-testid="create-img" className="character__detail-img" src={`${character.thumbnail?.path}.${character.thumbnail?.extension}`} alt="character" />
+        <div>
+          <FavoritesButton />
+        </div>
         <section>
           <div className="character__detail-creators" data-testid={`list-item-${character.id}`}>
             <h3 className="character__detail-creator">
