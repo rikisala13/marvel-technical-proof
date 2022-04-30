@@ -12,14 +12,14 @@ export default function CharacterCard({ character }) {
   return (
     <div className="character__item">
       <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-        <img src={`${character?.thumbnail.path}.${character?.thumbnail.extension}`} alt={`${character.name}`} className="character__img" />
+        <img data-testid="create-img" src={`${character?.thumbnail.path}.${character?.thumbnail.extension}`} alt={`${character.name}`} className="character__img" />
         <a href="#!">
           <div className="mask" />
         </a>
       </div>
       <div className="card-body">
         <h5 className="card-title">{character.name}</h5>
-        <button onClick={redirect} type="button" className="btn btn-dark">Saber mas</button>
+        <button data-testid="button-test" onClick={redirect} type="button" className="btn btn-dark">Saber mas</button>
       </div>
     </div>
   );
