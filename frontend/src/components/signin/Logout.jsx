@@ -11,7 +11,7 @@ function LogoutButton() {
     navigate('/login');
   }
   return (
-    <button type="button" className="btn btn-dark" onClick={redirect}>LogOut</button>
+    <button type="button" data-testid="logout-button-test" className="btn btn-dark" onClick={redirect}>LogOut</button>
 
   );
 }
