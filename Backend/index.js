@@ -12,10 +12,12 @@ server.use(morgan('dev'));
 server.use(express.json());
 
 // Rutas
-const charactersRouter = require('./src/routes/charactersRoute');
+const CharactersRouter = require('./src/routes/charactersRoute');
+const favoritesRouter = require('./src/routes/favoritesRoute');
 
 // path de las rutas
-server.use('/', charactersRouter);
+server.use('/', CharactersRouter);
+server.use('/favorites', favoritesRouter);
 
 // mensaje que se va a mostrar por consola cuando se levante el servidor
 server.listen(

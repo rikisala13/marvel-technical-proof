@@ -8,18 +8,18 @@ const {
   deleteOneCharacter
 } = require('../controllers/characters.controller');
 
-const productsRouter = Router();
+const CharactersRouter = Router();
 
-productsRouter
+CharactersRouter
   .route('/')
   .get(getAllCharacters)
   .post(postCharacter);
 
-productsRouter
+CharactersRouter
   .route('/:characterId')
   .all(findOneCharacter)
   .get(getOneCharacter)
   .put(putOneCharacter)
   .delete(deleteOneCharacter);
 
-module.exports = productsRouter;
+module.exports = CharactersRouter;
