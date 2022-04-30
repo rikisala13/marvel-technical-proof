@@ -1,29 +1,23 @@
 import React from 'react';
-import { render, unmountComponentAtNode } from 'react-dom';
-import { act } from 'react-dom/test-utils';
-import { StaticRouter } from 'react-router';
 
 import Navbar from './Navbar';
 
+import { render, screen } from '../../utils/test-utils';
+
 describe('Given a Navbar component', () => {
-  describe('When is rendered', () => {
-    let container;
+  describe('When it is rendered', () => {
     beforeEach(() => {
-      container = document.createElement('div');
-      document.body.appendChild(container);
+      render(
+        <Navbar />
+      );
     });
 
-    afterEach(() => {
-      unmountComponentAtNode(container);
-      container.remove();
-      container = null;
+    test('Then should render the title "Marvel"', () => {
+      expect(screen.getByText(/Marvel/i)).toBeInTheDocument();
     });
 
-    test('Then 1 nav elements should be in the document', () => {
-      act(() => {
-        render(<StaticRouter><Navbar /></StaticRouter>, container);
-      });
-      expect(container.getElementsByTagName('div').length).toBe(1);
+    test('Then should have a button with dataid "Perfil"', () => {
+      expect(screen.getByTestId('Perfil')).toBeInTheDocument();
     });
   });
 });

@@ -21,7 +21,7 @@ function Navbar() {
           <h2 className="navbar-brand">Marvel Heroes App</h2>
         </div>
         <div>
-          <button type="button" className="btn btn-dark" onClick={redirect}>Perfil</button>
+          <button type="button" data-testid="Perfil" className="btn btn-dark" onClick={redirect}>Perfil</button>
         </div>
 
       </nav>
