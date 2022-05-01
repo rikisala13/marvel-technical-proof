@@ -9,5 +9,6 @@ Una vez autenticados vemos una lista general de 10 personajes por página que no
 
 Dejando ya preparado el entorno para el botón de "ME GUSTA " a falta de la conexión con el Backend que lo gestiona la lógica principal estaría implementada.
 
-También como NEXT STEPS esta preparado el Backend para aceptar peticiones de los ME GUSTA, COMENTARIOS, LA PUNTUACIÓN (que da el Usuario) y la PUNTUACIÓN GENERAL. Dejando preparados también los ID para el test de componentes en el **frontend**
+También como NEXT STEPS esta preparado el Backend para aceptar peticiones de los ME GUSTA, COMENTARIOS, LA PUNTUACIÓN (que da el Usuario) y la PUNTUACIÓN GENERAL. 
 ***
+**Frontend** quedo testeado con mas de un 50% de coverage y tambien en el **backend** se dejaron testeados los controllers. 
